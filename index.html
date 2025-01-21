@@ -28,16 +28,16 @@
     <link rel="shortcut icon" href="images/fav.png" type="image/x-icon" />
   </head>
 
-  <body>
+  <body data-bs-spy="scroll" data-bs-target="#scrollspy">
     <!-- fixed -->
     <a href="#home" class="scrollToTop">
       <i class="fa-solid fa-arrow-up"></i>
     </a>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top shadow-lg" id="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top shadow-lg" id="scrollspy">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#home">
           <img
             src="images/logo.png"
             alt="logo image"
@@ -62,13 +62,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a class="nav-link active" aria-current="page" href="#home"
                 >Home</a
               >
             </li>
 
             <li class="nav-item">
               <a class="nav-link" href="#about">About</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
             </li>
 
             <li class="nav-item">
@@ -99,7 +103,9 @@
       <div
         class="homeContent text-center d-flex flex-column align-items-center justify-content-center flex-column"
       >
-        <h1 class="text-capitalize main-title">Xider <span>Studio</span></h1>
+        <h1 class="text-capitalize main-title">
+          Xider <span id="element"></span>
+        </h1>
         <p class="w-75">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
           aspernatur est ipsam ab fuga vero qui
@@ -197,9 +203,92 @@
       </div>
     </section>
 
+    <!-- service -->
+    <section id="services" class="services py-5">
+      <div class="container pt-5">
+        <div class="sectionTitle text-center pb-5">
+          <h2>Our <span class="fw-bold">Services</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            aspernatur est ipsam ab fuga vero qui
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-code mb-3"></i>
+              <h4>Web Development</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-palette mb-3"></i>
+              <h4>Graphic Design</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-bullhorn mb-3"></i>
+              <h4>Marketing</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-code mb-3"></i>
+              <h4>Web Development</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-palette mb-3"></i>
+              <h4>Graphic Design</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="serviceBox text-center p-4">
+              <i class="fas fa-bullhorn mb-3"></i>
+              <h4>Marketing</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Molestiae aspernatur est ipsam ab fuga vero qui
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- client -->
     <section id="client" class="client py-5">
-      <div class="container">
+      <div class="container pt-5">
         <div class="sectionTitle text-center pb-5">
           <h2>Our <span class="fw-bold">Client</span></h2>
           <p>
@@ -302,7 +391,7 @@
             data-bs-slide="prev"
           >
             <span aria-hidden="true">
-              <i class="fa-solid fa-chevron-left"></i>
+              <i class="fa-solid fa-chevron-left mb-3"></i>
             </span>
             <span class="visually-hidden">Previous</span>
           </button>
@@ -314,7 +403,7 @@
             data-bs-slide="next"
           >
             <span aria-hidden="true">
-              <i class="fa-solid fa-chevron-right"></i>
+              <i class="fa-solid fa-chevron-right mb-3"></i>
             </span>
             <span class="visually-hidden">Next</span>
           </button>
@@ -324,7 +413,7 @@
 
     <!-- portfolio -->
     <section id="portfolio" class="portfolio py-5">
-      <div class="container">
+      <div class="container pt-5">
         <div class="sectionTitle text-center pb-5">
           <h2>Our <span class="fw-bold text-capitalize">work</span></h2>
           <p>
@@ -755,15 +844,15 @@
 
       <div class="overlaySlider">
         <div class="closeBtn">
-          <i class="fa-solid fa-xmark"></i>
+          <i class="fa-solid fa-xmark mb-3"></i>
         </div>
 
         <div class="next">
-          <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right mb-3"></i>
         </div>
 
         <div class="prev">
-          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-arrow-left mb-3"></i>
         </div>
 
         <img src="images/about.jpg" alt="" />
@@ -772,7 +861,7 @@
 
     <!-- blog -->
     <section id="blog" class="blog py-5">
-      <div class="container">
+      <div class="container pt-5">
         <div class="sectionTitle text-center pb-5">
           <h2>Our <span class="fw-bold text-capitalize">blog</span></h2>
           <p>
@@ -909,7 +998,7 @@
               <input
                 type="text"
                 name="name"
-                id="name"
+                id="userName"
                 placeholder="Your Name"
                 class="form-control"
               />
@@ -991,6 +1080,18 @@
 
     <!-- bootstrap js -->
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- typed js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["<i>Studio</i> sentence.", "a second sentence."],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true,
+      });
+    </script>
 
     <!-- fontawesome js -->
     <script src="js/all.min.js"></script>
