@@ -1,21 +1,29 @@
-// nav active
-const navLinks = Array.from(document.querySelectorAll(".navbar .nav-link"));
-const sections = Array.from(document.querySelectorAll("section"));
+// scroll to top
+const scrollTop = document.querySelector(".scrollToTop");
+const navbar = document.querySelector(".navbar");
+
+let prevScroll = 0;
+let currentScroll = 0;
 
 window.addEventListener("scroll", () => {
-  sections.forEach((section) => {
-    if (
-      window.scrollY >= section.offsetTop - section.offsetHeight / 3 &&
-      window.scrollY < section.offsetTop + section.offsetHeight
-    ) {
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${section.id}`) {
-          link.classList.add("active");
-        }
-      });
-    }
-  });
+  if (window.scrollY > 100) {
+    scrollTop.style.display = "flex";
+    navbar.style.backgroundColor = "var(--bg-color)";
+  } else {
+    scrollTop.style.display = "none";
+    navbar.style.backgroundColor = "transparent";
+  }
+});
+
+// scroll down no nav, scroll up with nav
+window.addEventListener("scroll", () => {
+  prevScroll = currentScroll;
+  currentScroll = window.scrollY;
+  if (currentScroll > prevScroll) {
+    navbar.style.transform = "translateY(-100%)";
+  } else {
+    navbar.style.transform = "translateY(0)";
+  }
 });
 
 // portfolio
@@ -96,42 +104,8 @@ portfolioItems.forEach((item) => {
   });
 });
 
-// scroll to top
-const scrollTop = document.querySelector(".scrollToTop");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY >= 100) {
-    scrollTop.style.display = "flex";
-  } else {
-    scrollTop.style.display = "none";
-  }
-});
-
-// navbar
-const navbar = document.getElementById("navbar");
-let lastScrollY = window.scrollY;
-
-window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
-
-  if (currentScrollY > lastScrollY) {
-    // Scrolling down
-    navbar.classList.add("d-none");
-  } else {
-    // Scrolling up
-    navbar.classList.remove("d-none");
-    navbar.classList.add("bg-scroll");
-  }
-
-  lastScrollY = currentScrollY;
-
-  if (window.scrollY <= 100) {
-    navbar.classList.remove("bg-scroll");
-  }
-});
-
 // validation
-const userName = document.getElementById("name");
+const userName = document.getElementById("userName");
 const email = document.getElementById("email");
 const subject = document.getElementById("subject");
 const message = document.getElementById("message");
@@ -156,7 +130,7 @@ function validationInputs(element, msgId) {
   let text = element.value;
   let regex = {
     email: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-    name: /^[A-Za-z\s]+$/,
+    userName: /^[A-Za-z\s]+$/,
     subject: /^[A-Za-z\s]+$/,
     message: /^[A-Za-z\s]+$/,
   };
@@ -171,8 +145,8 @@ function validationInputs(element, msgId) {
   }
 }
 
-name.addEventListener("blur", () => {
-  validationInputs(name, "nameError");
+userName.addEventListener("blur", () => {
+  validationInputs(userName, "nameError");
 });
 email.addEventListener("blur", () => {
   validationInputs(email, "emailError");
